@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cristy Variedades</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/estilo_admin.css">
+    <!-- Iconos-->
+    <link rel="stylesheet" href="../fontawesome/css/all.css">
+    <!-- datatables -->
+    <link rel="stylesheet" href="../css/jquery.dataTables.css">
+
+    <!-- llamo a conexion -->
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    
+    <script src="../js/conexion.js"></script>
+    <script> 
+        var db = firebase.firestore();
+        var storage = firebase.storage();
+    </script>
+</head>
+<body>
+    <div id="nav"></div>
+  <hr>
+    <section>
+        <h1>Usuarios</h1>
+        <hr>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-2">
+                <input type="button" id="boton" class="btn btn-warning" value="Insertar Usuario" onclick="mostrar_form(1)">
+            </div>
+        </div>
+        <form id="form">
+            <div class="row">
+                <div class="col-lg-1">
+                    <input type="hidden" id="uid"> <input type="hidden" id="control" value="0">
+                </div>
+                <div class="col-lg-2">
+                    <input type="text" id="nombre" placeholder="Nombre usuario" class="form-control" required="required">
+                </div>
+                <div class="col-lg-2">
+                    <input type="email" id="email" placeholder="Email" class="form-control" required="required">
+                </div>
+                <div class="col-lg-2">
+                    <input type="password" id="clave" placeholder="Contraseña" class="form-control" required="required">
+                </div>
+                <div class="col-lg-2">
+                    <select id="rol" class="form-control form-select" required="required">
+                        <option value="" label="Seleccione rol">Seleccione rol</option>
+                        <option value="Administrador" label="Administrador">Administrador</option>
+                        <option value="Invitado" label="Invitado">Invitado</option>
+                    </select>
+                </div>
+                <div class="col-lg-1">
+                    <input type="submit" id="submit" value="Guardar" class="btn btn-warning">
+                </div>
+                <div class="col-lg-1">
+                    <input type="button" value="Cancelar" class="btn btn-secondary" onclick="mostrar_form(0)">
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+        </form>
+        <br>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="tusuario">
+                        <thead>
+                            <tr class="table-light text-center">
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Contraseña</th>
+                                <th>Rol</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyu" class="table-group-divider"></tbody>
+                        <tfoot class="table-group-divider">
+                            <tr class="table-light text-center">
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Contraseña</th>
+                                <th>Rol</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </section>
+</body>
+<!-- programa-->
+
+<script src="../js/estructura/nav.js"></script>
+<script src="../js/crypto/rollups/sha1.js"></script>
+<script src="../js/modelo/mlogin.js"></script>
+<script src="../js/modelo/usuario.js"></script>
+<script src="../js/controlador/usuario.js"></script>
+
+<script>bloqueo();</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- bootstrap -->
+
+<script src="../js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script> -->
+
+
+</html>

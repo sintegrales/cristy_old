@@ -1,0 +1,21 @@
+body{
+    background-image: url(../img/fondo_login.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: #9b8cae;
+}
+
+#form{
+    padding: 30px;
+    margin-top: 40%;
+    text-align: center;
+    margin-left: 10%;
+}
+
+input{
+    margin-top: 10px;
+}
+
+#boton{
+    width: 100%;
+}
